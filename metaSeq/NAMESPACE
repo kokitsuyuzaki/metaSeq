@@ -1,0 +1,10 @@
+import (NOISeq)
+import (snow)
+
+export(
+	meta.readData,
+	meta.oneside.noiseq,
+	Fisher.test,
+	Stouffer.test,
+	other.oneside.pvalues
+)
