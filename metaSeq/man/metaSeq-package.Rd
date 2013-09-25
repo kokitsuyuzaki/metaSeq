@@ -13,7 +13,7 @@ Meta-analysis for multiple studies's RNA-Seq count data. In this package, probab
 Package: \tab metaSeq\cr
 Type: \tab Package\cr
 Version: \tab 0.99.0\cr
-Date: \tab 2013-09-22\cr
+Date: \tab 2013-09-25\cr
 License: \tab Artistic-2.0\cr
 }
 }

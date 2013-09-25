@@ -2,7 +2,7 @@ Package: metaSeq
 Type: Package
 Title: Meta-analysis of RNA-Seq count data in multiple studies
 Version: 0.99.0
-Date: 2013-09-24
+Date: 2013-09-25
 Author: Koki Tsuyuzaki, Itoshi Nikaido
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
 Depends: R (>= 2.13.0), NOISeq, snow

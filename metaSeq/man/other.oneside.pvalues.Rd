@@ -35,10 +35,8 @@ result <- other.oneside.pvalues(upper, lower, weight)
 # Fisher's method (without weighting)
 F <- Fisher.test(result)
 str(F)
-F
 
 # Stouffer's method (with weighting by sample-size)
 S <- Stouffer.test(result)
 str(S)
-S
 }

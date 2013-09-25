@@ -39,8 +39,8 @@ e$loc[[1]] <- 1:6
 e$loc[[2]] <- 7:12
 e$loc[[3]] <- c(1,4)
 
-result21 <- oneside.noiseq(cds2[[1]], k = 0.5, norm = "tmm", replicates = "biological", factor = "e$factors[e$loc[[x]]]", conditions = c(1, 0), x = 1)
-result22 <- oneside.noiseq(cds2[[2]], k = 0.5, norm = "tmm", replicates = "biological", factor = "e$factors[e$loc[[x]]]", conditions = c(1, 0), x = 2)
+result21 <- metaSeq:::oneside.noiseq(cds2[[1]], k = 0.5, norm = "tmm", replicates = "biological", factor = "e$factors[e$loc[[x]]]", conditions = c(1, 0), x = 1)
+result22 <- metaSeq:::oneside.noiseq(cds2[[2]], k = 0.5, norm = "tmm", replicates = "biological", factor = "e$factors[e$loc[[x]]]", conditions = c(1, 0), x = 2)
 
 expect_equivalent(nrow(result11@results), nrow(result21@results))
 expect_equivalent(nrow(result12@results), nrow(result22@results))
@@ -85,4 +85,7 @@ expect_equivalent(length(F$Lower), 100)
 expect_equivalent(length(S$Lower), 100)
 expect_equivalent(length(F$Weight), 2)
 expect_equivalent(length(S$Weight), 2)
+
+result6 <- other.oneside.pvalues(upper, lower)
+expect_error(Stouffer.test(result6))
 

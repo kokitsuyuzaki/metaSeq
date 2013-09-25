@@ -1,10 +1,10 @@
 other.oneside.pvalues <-
 function (Upper, Lower, weight = NULL) 
 {
-    if ((min(Upper) < 0) || (max(Upper) > 1)) {
+    if ((min(!is.na(Upper)) < 0) || (max(!is.na(Upper)) > 1)) {
         stop("Is this dataset (upper) pvalues? Some elements exceed 0 - 1 range. Please confirm first.\n")
     }
-    if ((min(Lower) < 0) || (max(Lower) > 1)) {
+    if ((min(!is.na(Lower)) < 0) || (max(!is.na(Lower)) > 1)) {
         stop("Is this dataset (lower) pvalues? Some elements exceed 0 - 1 range. Please confirm first.\n")
     }
     if (nrow(Upper) != nrow(Lower)) {
