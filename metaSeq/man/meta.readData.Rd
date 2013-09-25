@@ -1,16 +1,14 @@
 \name{meta.readData}
 \alias{meta.readData}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 readData function for meta-analysis
 }
 \description{
-\code{\link[NOISeq]{readData}} function in \code{\link[NOISeq]} package customized for one-sided test in meta-analysis. Parallel computing is also available by \code{\link[snow]} package.
+\code{\link[NOISeq]{readData}} function in NOISeq package customized for one-sided test in meta-analysis. Parallel computing is also available by snow package.
 }
 \usage{
 meta.readData(data = NULL, factors = NULL, length = NULL, biotype = NULL, chromosome = NULL, gc = NULL, studies = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{
 Matrix or data.frame containing the counts (or expression data) for each feature and sample. Features must be in rows and samples must be in columns.
@@ -34,29 +32,13 @@ Optional argument.Vector, matrix or data.frame containing the GC content of each
 A vector specifying which column in data are measured in common study. Its length must be equal to the number of column in data.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
 \references{
 Tarazona, S. and Garcia-Alcalde, F. and Dopazo, J. and Ferrer, A. and Conesa, A. (2011) Differential expression in RNA-seq: A matter of depth. \emph{Genome Research},
 \bold{21(12)}: 2213-2223
 }
 \author{
-Koki Tsuyuzaki
+Koki Tsuyuzaki, Itoshi Nikaido
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link[NOISeq]{readData}}
 }
@@ -87,3 +69,4 @@ F
 S <- Stouffer.test(result)
 str(S)
 S
+}

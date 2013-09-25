@@ -1,6 +1,5 @@
 \name{Fisher.test}
 \alias{Fisher.test}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Fisher's combined probability method
 }
@@ -10,7 +9,6 @@ Fisher's method combines multiple p-values which are calculated in each study.
 \usage{
 Fisher.test(pvals, na.mode = "notignore")
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{pvals}{
 A matrix coming from \code{\link{meta.oneside.noiseq}} function or \code{\link{other.oneside.pvalues}}, which is used for any one-sided p-values or probability.
@@ -19,28 +17,12 @@ A matrix coming from \code{\link{meta.oneside.noiseq}} function or \code{\link{o
 A string indicating how to treat NA in pvals. "notignore" means that genes having at least one NA is regarded as NA. "ignore" means NA is ignored and remaining data is used. By default, na.mode = "notignore".
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
 \references{
 Fisher, R. A. (1932) \emph{Statistical Methods for Research Workers}, \bold{4th edition}, Oliver and Boyd, London.
 }
 \author{
-Koki Tsuyuzaki
+Koki Tsuyuzaki, Itoshi Nikaido
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{meta.readData}}, \code{\link{meta.oneside.noiseq}}, \code{\link{other.oneside.pvalues}}
 }
@@ -71,3 +53,4 @@ F
 S <- Stouffer.test(result)
 str(S)
 S
+}
