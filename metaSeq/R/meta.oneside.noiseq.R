@@ -80,13 +80,19 @@ function (input, k = 0.5, norm = c("rpkm", "uqua", "tmm", "n"),
                 output <- list()
                 length(output) <- 3
                 names(output) <- c("upper", "lower", "weight")
-                result <- oneside.noiseq(e$input[[x]], k = e$k, 
-                  norm = e$norm, replicates = e$replicates, factor = "e$factors[e$loc[[x]]]", 
-                  conditions = e$conditions, pnr = e$pnr, nss = e$nss, 
-                  v = e$v, lc = e$lc, x = x)
-                output$upper <- result@results[[1]]$prob
-                output$lower <- 1 - result@results[[1]]$prob
-                output$weight <- nrow(input[[x]]@phenoData@data)
+                result <- metaSeq:::oneside.noiseq(e$input[[x]], 
+                  k = e$k, norm = e$norm, replicates = e$replicates, 
+                  factor = "e$factors[e$loc[[x]]]", conditions = e$conditions, 
+                  pnr = e$pnr, nss = e$nss, v = e$v, lc = e$lc, 
+                  x = x)
+                U <- result@results[[1]]$prob
+                L <- 1 - result@results[[1]]$prob
+                W <- nrow(input[[x]]@phenoData@data)
+                names(U) <- rownames(input[[x]]@assayData$exprs)
+                names(L) <- rownames(input[[x]]@assayData$exprs)
+                output$upper <- U
+                output$lower <- L
+                output$weight <- W
                 return(output)
             })
             colnames(out) <- paste("Study", 1:l)
@@ -97,13 +103,19 @@ function (input, k = 0.5, norm = c("rpkm", "uqua", "tmm", "n"),
                 output <- list()
                 length(output) <- 3
                 names(output) <- c("upper", "lower", "weight")
-                result <- oneside.noiseq(e$input[[x]], k = e$k, 
-                  norm = e$norm, replicates = e$replicates, factor = "e$factors[e$loc[[x]]]", 
-                  conditions = e$conditions, pnr = e$pnr, nss = e$nss, 
-                  v = e$v, lc = e$lc, x = x)
-                output$upper <- result@results[[1]]$prob
-                output$lower <- 1 - result@results[[1]]$prob
-                output$weight <- nrow(input[[x]]@phenoData@data)
+                result <- metaSeq:::oneside.noiseq(e$input[[x]], 
+                  k = e$k, norm = e$norm, replicates = e$replicates, 
+                  factor = "e$factors[e$loc[[x]]]", conditions = e$conditions, 
+                  pnr = e$pnr, nss = e$nss, v = e$v, lc = e$lc, 
+                  x = x)
+                U <- result@results[[1]]$prob
+                L <- 1 - result@results[[1]]$prob
+                W <- nrow(input[[x]]@phenoData@data)
+                names(U) <- rownames(input[[x]]@assayData$exprs)
+                names(L) <- rownames(input[[x]]@assayData$exprs)
+                output$upper <- U
+                output$lower <- L
+                output$weight <- W
                 return(output)
             })
             colnames(out) <- paste("Study", 1:l)

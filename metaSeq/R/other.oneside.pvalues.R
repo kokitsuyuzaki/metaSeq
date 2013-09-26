@@ -21,29 +21,19 @@ function (Upper, Lower, weight = NULL)
         stop(Call)
     }
     l <- ncol(Upper)
-    if (is.null(weight)) {
-        out <- sapply(1:l, function(x) {
-            output <- list()
-            length(output) <- 3
-            names(output) <- c("upper", "lower", "weight")
-            output$upper <- Upper[, x]
-            output$lower <- Lower[, x]
-            return(output)
-        })
-        colnames(out) <- paste("Exp", 1:l)
-        return(out)
-    }
-    else {
-        out <- sapply(1:l, function(x) {
-            output <- list()
-            length(output) <- 3
-            names(output) <- c("upper", "lower", "weight")
-            output$upper <- Upper[, x]
-            output$lower <- Lower[, x]
-            output$weight <- weight[x]
-            return(output)
-        })
-        colnames(out) <- paste("Exp", 1:l)
-        return(out)
-    }
+    out <- sapply(1:l, function(x) {
+        output <- list()
+        length(output) <- 3
+        names(output) <- c("upper", "lower", "weight")
+        U <- Upper[, x]
+        L <- Lower[, x]
+        names(U) <- rownames(Upper)
+        names(L) <- rownames(Lower)
+        output$upper <- U
+        output$lower <- L
+        output$weight <- weight[x]
+        return(output)
+    })
+    colnames(out) <- paste("Exp", 1:l)
+    return(out)
 }

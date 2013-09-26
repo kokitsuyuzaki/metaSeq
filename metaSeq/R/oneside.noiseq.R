@@ -5,10 +5,9 @@ function (input, k = 0.5, norm = c("rpkm", "uqua", "tmm", "n"),
     x = NULL) 
 {
     env <- getNamespace("NOISeq")
-    assignInNamespace("probdeg", metaSeq:::custom.probdeg, ns = "NOISeq", 
+    assignInNamespace("probdeg", custom.probdeg, ns = "NOISeq", 
         envir = env)
-    assignInNamespace("MD", metaSeq:::custom.MD, ns = "NOISeq", 
-        envir = env)
+    assignInNamespace("MD", custom.MD, ns = "NOISeq", envir = env)
     k2 = 0.5
     norm2 = c("rpkm", "uqua", "tmm", "n")
     replicates2 = c("technical", "biological", "no")
@@ -70,8 +69,7 @@ function (input, k = 0.5, norm = c("rpkm", "uqua", "tmm", "n"),
             pnr = e2$pnr, nss = e2$nss, v = e2$v, lc = e2$lc)
     }
     return(out)
-    assignInNamespace("probdeg", metaSeq:::original.probdeg, 
-        ns = "NOISeq", envir = env)
-    assignInNamespace("MD", metaSeq:::original.MD, ns = "NOISeq", 
+    assignInNamespace("probdeg", original.probdeg, ns = "NOISeq", 
         envir = env)
+    assignInNamespace("MD", original.MD, ns = "NOISeq", envir = env)
 }
