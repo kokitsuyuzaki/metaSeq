@@ -37,9 +37,13 @@ flag2 <- c("A","A","A","A","A", "B","B", "C","C","C","C","C","C","C","C", "D","D
 cds <- meta.readData(data = BreastCancer, factor = flag1, studies = flag2)
 
 # oneside NOISeq for meta-analysis
-cl <- makeCluster(4, "SOCK")
-result <- meta.oneside.noiseq(cds, k = 0.5, norm = "tmm", replicates = "biological", factor = flag1, conditions = c(1, 0), studies = flag2, cl = cl)
-stopCluster(cl)
+# cl <- makeCluster(4, "SOCK")
+# result <- meta.oneside.noiseq(cds, k = 0.5, norm = "tmm", replicates = "biological", factor = flag1, conditions = c(1, 0), studies = flag2, cl = cl)
+# stopCluster(cl)
+
+# Script above is very time-consumming step. Please use this pre-calculated result instead
+data(Result.Meta)
+result <- Result.Meta
 
 # Fisher's method (without weighting)
 F <- Fisher.test(result)
