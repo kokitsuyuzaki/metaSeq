@@ -1,10 +1,13 @@
 import (NOISeq)
 import (snow)
+import (Rcpp)
 
 export(
 	meta.readData,
 	meta.oneside.noiseq,
 	Fisher.test,
 	Stouffer.test,
-	other.oneside.pvalues
+	other.oneside.pvalues,
+	Accelerate.NOISeq,
+	Reset.Accelerate.NOISeq
 )

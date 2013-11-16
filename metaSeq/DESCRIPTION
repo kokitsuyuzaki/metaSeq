@@ -1,12 +1,11 @@
 Package: metaSeq
 Type: Package
 Title: Meta-analysis of RNA-Seq count data in multiple studies
-Version: 1.1.1
-Date: 2013-09-25
+Version: 1.1.2
+Date: 2013-11-16
 Author: Koki Tsuyuzaki, Itoshi Nikaido
 Maintainer: Koki Tsuyuzaki <k.t.the-answer@hotmail.co.jp>
-Depends: R (>= 2.13.0), NOISeq, snow
-biocViews: Bioinformatics, RNAseq, DifferentialExpression,
-        HighThroughputSequencing
+Depends: R (>= 2.13.0), NOISeq, snow, Rcpp
+biocViews: Bioinformatics, RNAseq, DifferentialExpression, HighThroughputSequencing
 Description: The probabilities by one-sided NOISeq are combined by Fisher's method or Stouffer's method
 License: Artistic-2.0
