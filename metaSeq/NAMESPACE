@@ -5,6 +5,7 @@ import (Rcpp)
 export(
 	meta.readData,
 	meta.oneside.noiseq,
+	meta.oneside.noiseqbio,
 	Fisher.test,
 	Stouffer.test,
 	other.oneside.pvalues,
