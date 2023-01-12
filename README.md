@@ -1,7 +1,7 @@
 # metaSeq
 =======
 
-MeSH.db is an R package for conducting meta-analysis of RNA-seq count data.
+metaSeq is an R package for conducting meta-analysis of RNA-seq count data.
 
 
 To install this package run:
